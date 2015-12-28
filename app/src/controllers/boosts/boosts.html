@@ -29,7 +29,7 @@
   <!-- START: Contents -->
   <div class="mdl-cell mdl-cell--8-col">
 
-    <div class="mdl-tabs__tab-bar" *ng-if="type == 'peer'">
+    <div class="mdl-tabs__tab-bar" *ng-if="type == 'peer'" style="padding-bottom:8px">
       <a [router-link]="['/Boosts', {type: 'peer', filter: 'inbox'}]" class="mdl-tabs__tab" [ng-class]="{'is-active': filter == 'inbox'}">Inbox</a>
       <a [router-link]="['/Boosts', {type: 'peer', filter: 'outbox'}]" class="mdl-tabs__tab" [ng-class]="{'is-active': filter == 'outbox'}">Outbox</a>
     </div>
