@@ -41,7 +41,7 @@
     </a>
 
     <!-- START: Booster -->
-    <div class="m-boost-console-booster" [hidden]="type == 'peer'">
+    <div class="m-boost-console-booster" [hidden]="type == 'peer' && filter == 'outbox'">
 
       <!-- CLOSED -->
       <div class="m-boost-console-booster-closed mdl-card mdl-shadow--2dp">
@@ -57,7 +57,7 @@
 
       <!-- OPEN -->
       <div class="m-boost-console-booster-open mdl-card mdl-shadow--2dp mdl-color--blue-grey-700" *ng-if="boosterToggle">
-        <div class="m-boost-console-booster-posts m-boost-console-booster-posts-newsfeed" *ng-if="type == 'newsfeed'">
+        <div class="m-boost-console-booster-posts m-boost-console-booster-posts-newsfeed" *ng-if="type == 'newsfeed' || type == 'peer'">
           <h3 class="mdl-color-text--blue-grey-300">Recent posts</h3>
           <div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active" [mdl] [hidden]="!boosterToggleInProgress"></div>
           <minds-activity [object]="post" *ng-for="#post of latestPosts"></minds-activity>
