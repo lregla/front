@@ -18,8 +18,6 @@ const routes: Routes = [
   imports: [
     NgCommonModule,
     RouterModule.forChild(routes),
-    NgFormsModule,
-    ReactiveFormsModule,
     CommonModule,
     LegacyModule,
     ModalsModule,
