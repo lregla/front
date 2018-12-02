@@ -1,29 +1,28 @@
 <div class="m-age">
 
-    <div class="m-marketing--header">
+    <div class="m-age--header">
   
-      <div class="m-marketing--header-inner">
-        <h1 i18n="@@BRANDING__TITLE">Account Age</h1>
-        <h3 i18n="@@BRANDING__SUBTITLE">How Many Hours?</h3>
+      <div class="m-age--header-inner">
+        <h1 i18n="@@ACCOUNTAGE__TITLE">Account Age</h1>
+        <h3 i18n="@@ACCOUNTAGE__SUBTITLE">How Many Hours?</h3>
       </div>
-      <div *ngIf="!!hours">{{hours}}</div>
-    </div>
-  
-    <div class="m-marketing--contents m-layout--row m-layout--wrap">
+      <div *ngIf="!!hours; else loggedOut" class="m-age--contents">
+        <span i18n="@@ACCOUNTAGE__INTRO">You have been a member for</span>
+        <span>
+          <span class="m-age--count">{{hours}}</span>
+          <label i18n="@@ACCOUNTAGE__LABEL">hours</label>
+        </span>
+      </div>
+      <ng-template #loggedOut>
+        <div class="m-age--contents">
+          <span i18n="@@ACCOUNTAGE__ERROR" class="m-age--error">
+            <a href="/login" routerLink="/login">Log in</a> to see how many hours old your account is.
+          </span>
+        </div>
+      </ng-template>
       
-      <div class="m-layout--cell">
-        <img [src]="minds.cdn_assets_url + 'assets/logos/logo.svg'" download/>
-        <label i18n="@@BRANDING__FULL_LOGO_LABEL">Full Logo</label>
-      </div>
-  
-      <div class="m-layout--cell">
-        <img [src]="minds.cdn_assets_url + 'assets/logos/bulb.svg'" download/>
-        <label i18n="@@BRANDING__BULB_LABEL">Bulb</label>
-      </div>
-  
-    </div>
-  
-  
+    </div>   
+    
+    <m-footer></m-footer>
   </div>
   
-  <m-footer></m-footer>

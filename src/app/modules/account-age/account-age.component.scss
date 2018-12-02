@@ -1,36 +1,67 @@
 @import "defaults";
 
-.m-branding {
-  .m-marketing--header {
+.m-age {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  font-size: 0.88em;
+
+  .m-age--header {
+    flex-grow: 1;
+    margin: 0 auto;
+    width: 100%;
     background: #FFF;
+
+    @media screen and (min-width: 1200px) {
+      width: 1200px;
+    }
   }
-  .m-marketing--header-inner {
+
+  @media screen and (min-width: 480px) {
+    font-size: 1em;
+  }
+
+  .m-age--header-inner,
+  .m-age--contents {
+    margin: 0 0 4em;
+    padding: 0 1em;
     text-align: center;
 
     h1 {
       color: #444;
     }
+
     h3 {
       color: #666;
       padding-right: 0;
     }
   }
 
-  .m-marketing--contents {
-    text-align: center;
-    img {
-      max-height: 156px;
-      @media only screen and (max-width: 460px) {
-        max-width: 332px;
+  .m-age--contents {
+      span {
+        display: block;
+        margin: 0 0 1em;
+        font-size: 1.5em;
       }
-    }
-    label {
-      display: block;
-      font-weight: 600;
-      text-transform: uppercase;
-      color: #666;
-      margin: 56px 0;
-    }
-  }
 
+      .m-age--count {
+        display: inline-block;
+        font-size: 10em;
+        line-height: 1;
+        color: #F5c609;
+        text-shadow: 0 0 0.066em rgba(0, 0, 0, 0.33);
+      }
+
+      .m-age--error {
+        font-weight: 600;
+      }
+
+      label {
+        display: inline-block;
+        font-weight: 600;
+        color: #666;
+        text-transform: uppercase;
+        vertical-align: baseline;
+      }
+  }
 }
